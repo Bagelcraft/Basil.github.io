@@ -12,7 +12,7 @@ body
     box-sizing: border-box;
 }
 
-ul {
+/* ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -40,16 +40,16 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
+} */
 
-.active {
+/* .active {
   background-color: #04AA6D;
-}
+} */
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+/* li a:hover {
   background-color: #111;
-}
+} */
 
 .body {
     font-family: Arial, Helvetica, sans-serif;
@@ -70,6 +70,13 @@ li a:hover {
     padding: 100px;
     height: 1000px;
   }
+  .calulatorrow
+  {
+    display: flex;
+    flex-basis:33%;
+    padding: 10px;
+    height: 100px;
+  }
   .Districtrow
   {
     display: flex;
@@ -82,7 +89,23 @@ li a:hover {
     flex-basis:33%;
     text-align: center;
     padding: 20px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 600px; /* Should be removed. Only for demonstration */
+  }
+
+  .districtcolumn 
+  {
+    flex-basis:33%;
+    text-align: center;
+    padding: 20px;
+    height: 600px; /* Should be removed. Only for demonstration */
+  }
+
+  .calulatorcolumn 
+  {
+    flex-basis:33%;
+    text-align: center;
+    padding: 60px;
+    height: 600px; /* Should be removed. Only for demonstration */
   }
 
   /* Create three equal columns that sits next to each other */
@@ -129,10 +152,12 @@ li a:hover {
   }
 
   table, th, td {
+    top: 50%;
+    left: 50%;
     border: 1px solid rgb(255, 255, 255);
     }
   th, td {
-    padding: 10px;
+  padding: 10 px;
   }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   *, *::after, *::before {
@@ -272,18 +297,247 @@ li a:hover {
     transform: scale(1);
   }
 
-    @media screen and (max-width:720px)
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+  .navbar 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.hamburger 
+{
+    display: none;
+    z-index: 10;
+}
+
+.bar 
+{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+    background-color:yellow;
+}
+
+.nav-menu 
+{
+    display: flex;
+    z-index:5;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item 
+{
+    margin-left: 5rem;
+}
+
+.nav-link
+{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-link:hover{
+    color: yellow;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+nav ul li
+{
+    display:inline-block;
+    font-size:1.2em;
+    margin: 0 18px;
+}
+
+nav ul li a
+{
+    color:white;
+    font-weight:600;
+}
+
+nav ul li a:hover
+{
+    color:yellow;
+}
+  /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+  @media screen and (max-width:720px)
     {
-        body
-        {   
-            background-color: green;
+          .calulatorrow 
+          {
+            flex-direction: column;
+          }   
+
+          .Typesrow1
+          {
+            flex-direction: column;
+          }
+
+          .Districtrow
+          {
+            flex-direction: column;
+          }
+
+          .background
+          {
+              background-repeat: repeat-y;
+          }
+
+          .calulatorcolumn 
+          {
+            flex: basis 33%;
+            text-align: center;
+            padding: 5px;
+            height: 1000px;
+          }
+
+          .column 
+          {
+            flex-basis:33%;
+            text-align: center;
+            padding: 20px;
+            height: 900px;
+          }
+
+          .districtcolumn 
+          {
+            flex-basis:33%;
+            text-align: center;
+            padding: 20px;
+            height: 600px;
+          }
+
+          .tabletext
+          {
+            font-size: 20px;
+          }
+
+          .textbackground
+          {
+          font-size: 15px;
+          }
+          /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+          .nav-menu {
+            position: fixed;
+            left: -100%;
+            top: 5rem;
+            flex-direction: column;
+            background-color: black;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            border-bottom:1px solid yellow;
+        }
+    
+        .nav-menu.active {
+            left: 0;
+        }
+    
+        .nav-item {
+            margin: 2.5rem 0;
+        }
+    
+        .hamburger {
+            display: block;
+            cursor: pointer;
+    
+        }
+    
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+    
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
     }
 
-    @media screen and (max-width:320px)
+    @media screen and (max-width:520px)
     {
-        body
-        {   
-            background-color: red;
+      .calulatorcolumn 
+      {
+        height: 1500px;
+      }
+
+      .districtcolumn 
+      {
+        height: 400px;
+      }
+
+      .column 
+      {
+        height: 1000px;
+      }
+
+      .districtcolumn img
+      {
+        width: 404.04px;
+       height: 250px;
+      }
+
+      th, td {
+        padding: 0 px;
+        }
+
+        table, th, td {
+          top: 80%;
+          left: 80%;
+          border: 0.1px solid rgb(255, 255, 255);
+        }
+
+        .imgspace
+        {
+          padding: 0px;
+        }
+      
+        .imgspace2
+        {
+          padding: 0px;
+        }
+      
+        .imgspace3
+        {
+          padding: 0px;
+        }
+
+        .column .textbackground .imgspace img
+        {
+          width: 250px;
+          height: 144.91px;
+        }
+
+        .column .textbackground .imgspace2 img
+        {
+          width: 250px;
+          height: 144.91px;
+        }
+
+        .column .textbackground .imgspace3 img
+        {
+          width: 250px;
+          height: 144.91px;
+        }
+        
+        .textbackground
+        {
+        font-size: 10px;
         }
     }
